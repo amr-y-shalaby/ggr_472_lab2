@@ -70,7 +70,7 @@
     print("\tCreating Projected Dataframe 'gpdf_{}' from Table '{}' :".format(public_table, public_table))
     <br/>
     gpd_statement = "gpdf_{} = gpd.read_postgis('SELECT * FROM public.{}', con=sqlalchemy_engine,
-    geom_col='geom')".format(public_table, public_table)
+    geom_col='geom', crs='EPSG:26917')".format(public_table, public_table)
     <br/>
     exec(gpd_statement, globals())
     <br/>
